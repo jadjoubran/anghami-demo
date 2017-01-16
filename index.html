@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Anghami Player</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#92278F">
+  <style>
+    body{
+      margin: 0;
+      background-color: #E0E0E0;
+    }
+    #shell-header{
+      background-color: #92278F;
+    }
+    #shell-fab{
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="shell-header">
+    <img src="images/logo.png" width="200" alt="Anghami logo">
+  </div>
+
+  <div id="shell-fab">
+    <svg fill="#92278F" height="50" viewBox="0 0 24 24" width="50" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 5v14l11-7z" />
+      <path d="M0 0h24v24H0z" fill="none" />
+    </svg>
+  </div>
+
+  <div id="artists-list"></div>
+
+  <script async src="js/app.js"></script>
+
+  <script>
+    (function () {
+      var link = document.createElement('link');
+      link.href = 'css/app.css';
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      document.body.appendChild(link);
+    })();
+  </script>
+
+  <noscript>
+    <link rel="stylesheet" href="css/app.css">
+    Anghami works best with a javascript enabled browser
+  </noscript>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('service-worker.js')
+      .then(function () {
+        console.log('SW success');
+      }).catch(function (error) {
+        console.log('error', error);
+      });
+  }
+</script>
+
+</body>
+
+</html>
