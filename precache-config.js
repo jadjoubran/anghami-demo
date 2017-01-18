@@ -7,7 +7,7 @@ module.exports = {
     'index.html?homescreen=1',
     'images/logo.png'
   ],
-  ignoreUrlParametersMatching: [],
+  ignoreUrlParametersMatching: [/^utm_/, /^homescreen/],
   runtimeCaching: [{
     urlPattern: /jsonplaceholder\.typicode\.com\/users/,
     handler: 'fastest'

@@ -41,7 +41,7 @@ var precacheConfig = [["images/logo.png","70b8fca7a5e9beee8606bd71f15e35f8"],["i
 var cacheName = 'sw-precache-v2-sw-precache-' + (self.registration ? self.registration.scope : '');
 
 
-var ignoreUrlParametersMatching = [];
+var ignoreUrlParametersMatching = [/^utm_/,/^homescreen/];
 
 
 
